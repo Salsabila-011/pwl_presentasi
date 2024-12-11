@@ -70,7 +70,7 @@ class BookController extends Controller
     {
         $book = Book::find($id);
 
-        $validated = $request->validate([
+       $validated = $request->validate([
             'title' => 'required|max:255',
             'author' => 'required|max:150',
             'year' => 'required|digits:4|integer|min:1900|max:' . (date('Y')),
@@ -79,7 +79,7 @@ class BookController extends Controller
             'bookshelf_id' => 'required',
             'cover' => 'nullable|image',
         ]);
-
+ 
         if ($request->hasFile('cover')) {
             if ($book->cover != null) {
                 Storage::delete('public/cover_buku/' . $request->old_cover);
