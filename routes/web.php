@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/books/print', [BookController::class, 'print'])->name('book.print');
     Route::get('/books/export', [BookController::class, 'export'])->name('book.export');
     Route::post('/books/import', [BookController::class, 'import'])->name('book.import');
+    Route::get('/books/search', [BookController::class, 'search'])->name('book.search');
+    
 });
 
 require __DIR__ . '/auth.php';
